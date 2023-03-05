@@ -10,6 +10,9 @@ const initWebRoute = (app) => {
 		return res.send("I'm Ngoc")
 	})
 	
+	router.get('/crud',homeController.crudPage)
+
+	router.post('/post-crud',homeController.postCrud)
 	return app.use("/", router)
 }	
 

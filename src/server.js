@@ -2,6 +2,7 @@ import express from "express";
 import bodyParser, { urlencoded } from "body-parser";
 import configViewEngine from './config/viewEngine';
 import initWebRoutes from './route/web';
+import connectDB from './config/connectDB'
 require('dotenv').config();
 
 
@@ -16,6 +17,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 configViewEngine(app);
 initWebRoutes(app);
 
+connectDB();
 let port = process.env.PORT  || 8069;
 
 app.listen(port, () => {
