@@ -1,7 +1,7 @@
 import express from "express";
 import bodyParser, { urlencoded } from "body-parser";
 import configViewEngine from './config/viewEngine';
-import initWebRoutes from './route/web';
+import initWebRoutes from './route/site';
 import connectDB from './config/connectDB'
 require('dotenv').config();
 
