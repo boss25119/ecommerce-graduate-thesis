@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>All user</h1>
+    <table>
+        <tr>
+            <th>Email</th>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Address</th>
+        </tr>
+        <p><%= data.firstName %></p>
+        <% for(let i = 0; i < data.length; i++){ %>
+            <tr>
+                <td><%= data[i].email %></td>
+                <td><%= data[i].firstName %></td>
+                <td><%= data[i].lastName%></td>
+                <td><%= data[i].address %></td>
+                <td>
+                    <a href="/edit-user-info?id=<%=data[i].id%>" class="'btn-edit" type="button">Edit</a>
+                    <a href="/delete-crud?id=<%=data[i].id%>" class="'btn-edit" type="button"> Delete</a>
+                </td>
+            </tr>
+        <% } %> 
+    </table>
+</body>
+</html>
